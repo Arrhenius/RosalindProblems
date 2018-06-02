@@ -6,3 +6,6 @@
 *.ko
 *.obj
 *.elf
+
+# Text files
+*.txt
