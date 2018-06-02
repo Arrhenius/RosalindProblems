@@ -8,7 +8,7 @@
 //#include "err.h"		files need to be written
 
 
-int sreplace(char old, char new, char *buffer)
+int sreplace(char old, char newChar, char *buffer)
 {
 	int count = 0;
 	if( *buffer )
@@ -17,7 +17,7 @@ int sreplace(char old, char new, char *buffer)
 		{
 			if( *buffer == old )
 			{
-				*buffer = new;
+				*buffer = newChar;
 				count++;
 			}
 			buffer++;
@@ -76,3 +76,25 @@ void handleFile(FILE **fp, const char *fileName, int action)
 		}
 	}
 }
+
+/* NOTE: Added May 22, 2018 */
+
+// Still testing if this implementation of my buffer overflow
+// check works correctly. Meant to remove the need of constantly
+// calling sreplace directly and then following it up with an
+// error check. This hasn't been fully implemented throughout
+// the project
+void handleString(char *buffer)
+{
+	if( *buffer )
+	{
+		if( !sreplace('\n','\0',buffer) )
+		{
+			fprintf(stderr,"Buffer overflow!\n");
+			exit(EXIT_FAILURE);
+		}
+		return;
+	}
+	fprintf(stderr,"handleString failed to execute on provided string!\n");
+}
+

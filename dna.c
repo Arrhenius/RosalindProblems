@@ -120,8 +120,8 @@ void runDnaCount()
 	if( (strcmp("Yes",tmp) == 0) || (strcmp("yes",tmp) == 0) || 
 		(strcmp("y",tmp) == 0) )
 	{
-		printf("Writing data results to file 'results.txt'....\n");
-		handleFile(&fpout, "results.txt", WR_ONLY);
+		printf("Writing data results to file 'dna_count_results.txt'....\n");
+		handleFile(&fpout, "dna_count_results.txt", WR_ONLY);
 		fprintf(fpout, "%d %d %d %d\n", data->a, data->c, data->g, data->t);
 		fclose(fpout);
 	}

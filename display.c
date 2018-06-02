@@ -1,8 +1,15 @@
+/*******************************
+	Author	: Abel Atkinson
+	Created	: March 31, 2018
+********************************/
+
 #include <stdio.h>
+#include <stdlib.h>
 #include "display.h"
 
 void printAbout()
 {
+	system("clear"); // This needs to be avoided. Temp solution
 	printf("\n\n\tThis program was built to solve problems present on\n");
 	printf("\tthe website Rosalind.info\n\n");
 	printf("\tTo make the problem solving process more interesting\n");
@@ -31,4 +38,8 @@ void printOptions()
 
 	printf("\tProgram list:\n\n");
 	printf("\t\tDNA\n");
+	printf("\t\tRNA\n");
+	printf("\t\tREVC\n");
+	printf("\t\tGC\n");
+	printf("\t\tHAMM\n");
 }

@@ -4,7 +4,7 @@
 #                                                             #
 # Author		: Abel Atkinson                                   #
 # Created	: March 31, 2018                                  #
-# Version	: 1.0.0                                           #
+# Version	: 1.0.1                                           #
 # Disclaimer: I wrote this EditorConfig file on Ubuntu 12.04  #
 #             while using Vim. I have yet to test this file   #
 #             anywhere else. May or may not work on other     #
@@ -39,7 +39,12 @@ indent_size = 3
 
 #-------------------------------------------------#
 #        Tab indentation for Makefiles            #
+#                                                 #
+# Note: Not sure if forcing an indent size        #
+#       on Makefiles breaks them. We'll find      #
+#       out with time.                            #
 #-------------------------------------------------#
 [Makefile]
 indent_style = tab
+indent_size = 3
 
