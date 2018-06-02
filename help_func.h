@@ -12,12 +12,20 @@
 
 
 // Program choices
-#define ID_DNA 200
+#define ID_DNA    200
+#define ID_RNA    201
+#define ID_REVC   202
+#define ID_GC     203
+#define ID_HAMM   204
+#define ID_PROT   205
+#define ID_SUBS   206
+#define ID_PRTM   207
 
 
-int sreplace(char, char, char *);
+int sreplace(char old, char newChar, char *buffer);
 //void openFileForRead(FILE *, const char *);
 //void openFileForWrite(FILE *, const char *);
-void handleFile(FILE **fp, const char *, int);
+void handleFile(FILE **fp, const char *fileName, int action);
+void handleString(char *buffer);
 
 #endif

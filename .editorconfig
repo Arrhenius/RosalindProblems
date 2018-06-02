@@ -39,7 +39,12 @@ indent_size = 3
 
 #-------------------------------------------------#
 #        Tab indentation for Makefiles            #
+#                                                 #
+# Note: Not sure if forcing an indent size        #
+#       on Makefiles breaks them. We'll find      #
+#       out with time.                            #
 #-------------------------------------------------#
 [Makefile]
 indent_style = tab
+indent_size = 3
 
