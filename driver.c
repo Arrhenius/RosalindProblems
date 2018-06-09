@@ -24,14 +24,14 @@ static struct
 
 } lookupTable[] =
 {
-		{ "DNA",		ID_DNA },
-		{ "RNA",		ID_RNA },
-		{ "REVC",	ID_REVC },
-		{ "GC",		ID_GC },
-		{ "HAMM",	ID_HAMM },
-		{ "PROT",	ID_PROT },
-		{ "SUBS",	ID_SUBS },
-		{ "PRTM",	ID_PRTM }
+		{ "DNA",    ID_DNA },
+		{ "RNA",    ID_RNA },
+		{ "REVC",   ID_REVC },
+		{ "GC",     ID_GC },
+		{ "HAMM",   ID_HAMM },
+		{ "PROT",   ID_PROT },
+		{ "SUBS",   ID_SUBS },
+		{ "PRTM",   ID_PRTM }
 };
  
 /* search for inputted string in the lookupTable */
