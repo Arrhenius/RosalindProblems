@@ -3,6 +3,10 @@
 	Created	: March 31, 2018
 *********************************/
 
+// If compiling using visual studio, tell the compiler not to give
+// its warnings about the safety of scanf and printf
+#define _CRT_SECURE_NO_WARNINGS 1
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -15,8 +19,12 @@
 #include "help_func.h"
 
 
-// LookupTable names are based on rosalind ID names
-// given to each problem on the website.
+// The following structure is in the searchTable function
+// to help look up the program that needs to be executed
+// when an option is entered.
+// 
+// Note: LookupTable names are based on rosalind ID names
+//       given to each problem on the website.
 static struct
 {
 	char name[MAX_TOKEN];
@@ -33,8 +41,20 @@ static struct
 		{ "SUBS",   ID_SUBS },
 		{ "PRTM",   ID_PRTM }
 };
- 
-/* search for inputted string in the lookupTable */
+
+/*********************** searchTable **********************
+int searchTable(const char *buffer)
+Purpose:
+	Takes a string obtained from user to search the
+	lookupTable for a matching string. The matching string
+	would be the program of choice and would then be executed
+
+Parameters:
+	I	const char *buffer	The user inputted string
+
+Returns:
+	0 Normal return
+***********************************************************/
 int searchTable(const char *buffer)
 {
 	int i;
