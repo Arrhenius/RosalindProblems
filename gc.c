@@ -11,9 +11,19 @@
 #include "gc.h"
 
 
+/******************* geneticList *********************
+struct geneticList *init_list(int num)
 
-#if 1
-// Initializes the dynamically allocated array 
+Purpose:
+	Allocates the required memory that will be used
+	for the geneticList in the GC program.
+
+Parameters:
+	I	int num		Size of dynamically allocated array
+						for the geneticList
+Returns:
+	Returns a geneticList pointer
+*****************************************************/
 struct geneticList *init_list(int num)
 {
 	struct geneticList *p;
@@ -26,9 +36,23 @@ struct geneticList *init_list(int num)
 	return p;
 }
 
-#endif
 // Inserts new geneticString data into the 
 // dynamically allocated array geneticList.
+
+/************************** ins_list ****************************
+int ins_list(struct geneticString data, struct geneticList **p)
+
+Purpose:
+	Takes in a geneticString and inserts it into the geneticList
+	that is provided.
+
+Parameters:
+	I	struct geneticString data		A genetic string 
+	I	struct geneticList **p			Holds a list of geneticStrings
+
+Returns:
+	0	Normal
+****************************************************************/
 int ins_list(struct geneticString data, struct geneticList **p)
 {
 	struct geneticList *q;
@@ -49,6 +73,21 @@ int ins_list(struct geneticString data, struct geneticList **p)
 	return 0;
 }
 
+/************************ evaluateStrings *************************
+void evaluateStrings(FILE *fpin, struct geneticList **p)
+
+Purpose:
+	Reads in genetic string data, computes values for the
+	geneticString struct variables and pushes that struct data
+	into the geneticList array.
+
+Parameters:
+	I FILE *fpin               File containing the genetic data
+	I struct geneticList **p   struct containing geneticString arrays
+
+Returns:
+	None
+******************************************************************/
 void evaluateStrings(FILE *fpin, struct geneticList **p)
 {
 	// MAX_LINE_SIZE is a significant overkill for this 
@@ -118,7 +157,19 @@ void evaluateStrings(FILE *fpin, struct geneticList **p)
 	ins_list(data, p);
 }
 
+/*********************** evaluateHighestContent **************************
+struct geneticString evaluateHighestContent(struct geneticList **p)
 
+Purpose:
+	To evaluate each genetic string's GC content and determine which
+	string has the highest percentage of GC present within that string
+
+Parameters:
+	struct geneticList **p	Array list with genetic string name and values.
+
+Returns:
+	A geneticString struct is returned to print name and gc percentage
+*************************************************************************/
 struct geneticString evaluateHighestContent(struct geneticList **p)
 {
 	int i;
