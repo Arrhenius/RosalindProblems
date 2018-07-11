@@ -36,8 +36,6 @@ struct geneticList *init_list(int num)
 	return p;
 }
 
-// Inserts new geneticString data into the 
-// dynamically allocated array geneticList.
 
 /************************** ins_list ****************************
 int ins_list(struct geneticString data, struct geneticList **p)
@@ -196,8 +194,18 @@ struct geneticString evaluateHighestContent(struct geneticList **p)
 	return (*p)->item[highest];
 }
 
+/**************************** runGC **************************
+void runGC()
 
+Purpose:
+	This is the 'main' function to execute the GC program
 
+Parameters:
+	N/A
+
+Returns:
+	N/A
+*************************************************************/
 void runGC()
 {
 //	char buffer[MAX_LINE_SIZE];
