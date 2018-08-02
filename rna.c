@@ -3,21 +3,52 @@
 #include "rna.h"
 #include "help_func.h"
 
+/******************* dnaToRna ****************
+int dnaToRna(char *buffer)
 
+Purpose:
+	Convert dna string to an rna one
+
+Parameters:
+	I	char *buffer	dna string to convert
+
+Returns:
+	Automatically returns 0 for success
+
+Note to self: Consider a better return for
+	this function.
+*********************************************/
 int dnaToRna(char *buffer)
 {
+	// Check to see if string exists
 	if( *buffer )
 	{
 		while( *buffer )
 		{
+			// If char in string has a 'T' as
+			// a character, change to 'U'
 			if( *buffer == 'T' )
 				*buffer = 'U';
-			buffer++;
+			buffer++; // move to next char in string
 		}
 	}
 	return 0;
 }
 
+
+/****************** runDnaToRna **************
+void runDnaToRna()
+
+Purpose:
+	Main calling function to run program that
+	changes DNA string to an RNA one
+
+Parameters:
+	N/A
+
+Returns:
+	N/A
+*********************************************/
 
 void runDnaToRna()
 {
@@ -55,7 +86,8 @@ void runDnaToRna()
 	}
 
 	printf("DNA to RNA conversion complete. Results stored to file.\n");
-	fclose(fpin);
+	// Close files since they are no longer needed
+	fclose(fpin); 
 	fclose(fpout);
 }
 
