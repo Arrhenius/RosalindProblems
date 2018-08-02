@@ -4,8 +4,20 @@
 #include "help_func.h"
 
 
+/*************** computeHammingDistance ***********
+unsigned int computeHammingDistance(FILE *file)
 
+Purpose:
+	To read the requires genetic strings from file
+	and calculate the Hamming Distance based on
+	these two strings
+Parameters:
+	I	FILE *file		File to read strings from
 
+Returns:
+	Returns unsigned int hamDis
+
+**************************************************/
 unsigned int computeHammingDistance(FILE *file)
 {
 	unsigned int hamDis = 0;
@@ -24,19 +36,24 @@ unsigned int computeHammingDistance(FILE *file)
 			hamDis++;
 		i++;
 	}
-
-#if 0
-	while( *s1 && *s2 )
-	{
-		if( *s1 != *s2 )
-			hamDis++;
-		s1++;
-		s2++;
-	}
-#endif
 	return hamDis;
 }
 
+
+
+/**************** runHammingDistance ***********
+void runHammingDistance()
+
+Purpose:
+	Calling function used to start the program
+	that calculates the Hamming Distance
+
+Parameters:
+	N/A
+
+Returns:
+	N/A
+***********************************************/
 
 void runHammingDistance()
 {
@@ -55,17 +72,19 @@ void runHammingDistance()
 	handleFile(&fpin, file, RD_ONLY);
 	printf("Computing Hamming distance on provided file '%s'.....\n", file);
 	
+	// calculate hamming distance and assign answer to result
 	result = computeHammingDistance(fpin);
-	fclose(fpin);
+	fclose(fpin);	// Close file since we are done
 	printf("Done.\n");
 
 	printf("Hamming Distance results: %u\n\n", result);
 	
-
+	// Ask user if they want results written to file
 	printf("Would you like to write results to file? (Yes/No): ");
 	fgets(tmp, MAX_TOKEN, stdin);
-	handleString(tmp);
+	handleString(tmp);  // Make string safe
 	
+	// Check to see answer of input
 	if( (strcmp("Yes", tmp) == 0) || (strcmp("yes", tmp) == 0) ||
 	    (strcmp("y", tmp) == 0) || (strcmp("Y", tmp) == 0) )
 	{
