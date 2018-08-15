@@ -3,6 +3,8 @@
 	Created	: March 31, 2018
 *********************************/
 
+#include <menu.h>
+#include <ncurses.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -50,7 +52,39 @@ int searchTable(const char *buffer)
 /* main for entire program */
 int main(int argc, char *argv[])
 {
+
 	char buffer[MAX_TOKEN];
+/************************************************************
+Note: Code present between the blocks of asterisks will be
+to some extent experimental. It will contain the beginnings
+of the ncurses menu and hopefully, a more refined interactive
+program. None of this code will ever see the light of the 
+main branch until it is completely functional. I type this 
+with the intention of informing anyone of what's happening
+should anyone be looking at this. This will be a slow
+process since I still need to learn curses completely.
+************************************************************/
+	ITEM **my_items;
+	MENU *my_menu;
+
+
+
+
+	initscr();
+	start_color();
+	noecho();
+	keypad(stdscr, TRUE);
+	
+
+
+
+/************************************************************
+
+************************************************************/
+
+
+
+
 
 
 	printAbout();
